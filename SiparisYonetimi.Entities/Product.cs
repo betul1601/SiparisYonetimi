@@ -1,0 +1,25 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SiparisYonetimi.Entities
+{
+    public class Product :IEntity
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public decimal Price { get; set; }
+        public int Stock { get; set; }
+        public string Image { get; set; }
+        public int CategoryId { get; set; }
+        public bool IsActive { get; set; }
+        public int BrandId { get; set; }    
+        public virtual Brand Brand { get; set; }
+        public virtual Category Category { get; set; } //ürün classı üzerinden ürünün kategori bilgisine entity framework ile ulaşabilmek için
+        public DateTime? CreateDate { get; set; } = DateTime.Now;
+
+    }
+}
